@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
+}
+.navbar-container{
+    padding: 15px;
+    background-color:#fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+a{
+    font-size: 12px;
+    color: #5d85a6;
+    text-decoration: none;
+}
+.cart-container{
+    display: flex;
+}
+.cart-shop{
+    width: 25px;
+    height: 25px;
+}
+.cart-number{
+    color: #a2738a;
+    font-size: 10px;
+}
+.brand{
+    width: 100px;
+}
+@media(min-width: 1024px) {
+    a{
+        font-size: 18px;
+    }
+    .brand{
+        width: 150px;
+    }
+    .cart-shop{
+        width: 45px;
+        height: 45px;
+    }
+    .cart-number{
+        font-size: 18px;
+    }
+}
+.item-container{
+    display: flex;
+    justify-content: center;
+    color: #5d85a6;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
