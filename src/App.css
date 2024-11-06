@@ -49,7 +49,9 @@ a{
 }
 .item-container{
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     color: #5d85a6;
     margin-bottom: 8px;
     font-size: 14px;
