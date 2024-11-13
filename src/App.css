@@ -8,15 +8,20 @@ body{
 }
 .navbar-container{
     padding: 15px;
-    background-color:#fff;
+    background-color:rgb(11, 35, 60);
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+.navbar-a{
+    display: flex;
+}
 a{
     font-size: 12px;
-    color: #5d85a6;
+    color: #ffffffd2;
+    font-weight: 400;
     text-decoration: none;
+    margin: 0 8px;
 }
 .cart-container{
     display: flex;
@@ -32,9 +37,17 @@ a{
 .brand{
     width: 100px;
 }
+.loading{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    right: 40%;
+    top: 25%;
+}
 @media(min-width: 1024px) {
     a{
         font-size: 18px;
+        margin: 0 40px;
     }
     .brand{
         width: 150px;
@@ -46,13 +59,90 @@ a{
     .cart-number{
         font-size: 18px;
     }
+    .loading{
+        width: 200px;
+        height: 200px;
+    }
 }
-.item-container{
+.cards-container{
+    background-color: #e0e0e0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.cards-container img{
+    max-height: fit-content;
+    max-width: fit-content;
+    margin: 10px;
+    border-radius: 15px;
+    box-shadow: 0px 7px 50px 5px #bebebe;
+}
+.cards-container h2{
+    font-size: 12px;
+    color: #0b233c;
+}
+.cards-description{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    color: #5d85a6;
-    margin-bottom: 8px;
-    font-size: 14px;
+    gap: 8px;
+    background-color: #fff;
+    margin: 10px;
+    border-radius: 10px;
+    min-width: 250px;
+}
+.cards-description p{
+    color: #0b233c;
+}
+.cards-description p{
+    font-size: 10px;
+    color: #0b233c;
+}
+.cards-description button{
+    border-radius: 30px;
+    background-color: #fff;
+    border: 1px solid #c0d4e7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+}
+.cards-container button img{
+    width: 18px;
+    height: 18px;
+}  
+@media (min-width: 1024px) {
+    .cards-container img{
+        max-height: fit-content;
+        max-width: fit-content;
+        margin: 10px;
+    }
+    .cards-container h2{
+        font-size: 18px;
+    }
+    .cards-description{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        padding: 8px;
+    }
+    .cards-description p{
+        font-size: 16px;
+    }
+    .cards-description button{
+        border-radius: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+    }
+    .cards-container button img{
+        width: 30px;
+        height: 30px;
+    }    
 }

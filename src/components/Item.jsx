@@ -1,12 +1,14 @@
-const Item = ({products}) =>{
+const Item = ({prod}) =>{
     return(
         <div>
-            {products.map((prod) => 
-            <div key={prod.id}>
-                <h2>{prod.name}</h2>
-                <p>${prod.price}</p>
-                <p>{prod.id}</p>
-            </div>)}
+            <div>
+                <img src={prod.image} alt={prod.name} />
+                <div className="cards-description">
+                    <h2>{prod.name}</h2>
+                    <p>${prod.price}</p>
+                    <button><img src="./public/icon.png" alt="icon" /></button>
+                </div>
+            </div>
         </div>
     )
 }
