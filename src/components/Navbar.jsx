@@ -1,13 +1,14 @@
 import CartShop from "./CartShop"
 import Brand from "./Brand"
+import { NavLink } from "react-router-dom"
 const NavBar = () => {
     return(
         <nav className="navbar-container">
-            <Brand/>
+            <NavLink to="/"><Brand/></NavLink>
             <div className="navbar-a">
-            <a>Productos</a>
-            <a>Contacto</a>
-            <a>Tienda</a>
+            <NavLink to="/products/nuevos">Nuevos Lanzamientos</NavLink>
+            <NavLink to="/products/mas populares">Más Populares</NavLink>
+            <NavLink to="/products/ofertas">Ofertas</NavLink>
             </div>
             <CartShop counter={10}/>    
         </nav>

@@ -4,7 +4,7 @@ const ItemCount = (props) =>{
     const [count, setCount] = useState(0);
     const {stock, onAdd} = props;
     const onAddHandler = () =>{
-        if(stock == 0){
+        if(stock >= 0){
             onAdd(count)
         }
     }
@@ -20,11 +20,11 @@ const ItemCount = (props) =>{
     }
     return(
         <div>
-            <button onClick={Restar}>-</button>
-            <span>{count}</span>
-            <button onClick={Sumar}>+</button>
-            <div>
-                <button onClick={onAddHandler}>Agregar al carrito</button>
+            <div className="count-container">
+                <button onClick={Restar} className="btn-restar">-</button>
+                <span className="span-count">{count}</span>
+                <button onClick={Sumar} className="btn-sumar">+</button>
+                <button onClick={onAddHandler} className="btn-add">Agregar al carrito</button>
             </div>
         </div>
     )

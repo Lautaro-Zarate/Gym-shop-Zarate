@@ -1,7 +1,7 @@
 const Brand = () => {
     return(
         <>
-            <img src="./public/brand.png" alt="Brand" className="brand"/>
+            <img src="../public/brand.png" alt="Brand" className="brand"/>
         </>
     )
 }
