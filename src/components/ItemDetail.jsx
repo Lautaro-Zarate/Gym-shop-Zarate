@@ -8,11 +8,13 @@ const ItemDetail = ({producto}) => {
     return(
         <div className="detail-container">
             <img src={producto.image} className="img-detail" />
-            <h2>{producto.name}</h2>
-            <p className="price-detail">${producto.price}</p>
-            <p>{producto.description}</p>
-            <ItemCount stock={producto.stock} onAdd={onAdd}/>
-            <button className="btn-buy">Comprar</button>
+            <div className="description-detail">
+                <h2>{producto.name}</h2>
+                <p className="price-detail">${producto.price}</p>
+                <p>{producto.description}</p>
+                <ItemCount stock={producto.stock} onAdd={onAdd}/>
+                <button className="btn-buy">Comprar</button>
+            </div>
         </div>
     )
 }

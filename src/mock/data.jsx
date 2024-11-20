@@ -143,6 +143,6 @@ export const getOneProduct = (id) => {
             } else{
                 reject("No hay datos")
             }
-        }, 1500)
+        }, 1000)
     })
 }
