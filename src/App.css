@@ -33,8 +33,9 @@ a{
     height: 22px;
 }
 .cart-number{
-    color: #a2738a;
-    font-size: 10px;
+    color: white;
+    font-size: 8px;
+    font-weight: 500;
 }
 .brand{
     width: 70px;
@@ -216,11 +217,20 @@ h1{
     height: 300px;
 }
 .btn-buy{
-    padding: 10px 150px;
+    padding: 10px 100px;
     border: 1px solid #0b263c;
     border-radius: 8px;
     background-color: white;
     color: #0b263c;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
+    margin: 8px;
+}
+.btn-cart{
+    padding: 10px 125px;
+    border: none;
+    border-radius: 8px;
+    background-color: #0b263c;
+    color: white;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
     margin: 8px;
 }
@@ -275,6 +285,16 @@ h1{
         padding: 15px 200px;
         font-size: 18px;
     }
+    .btn-cart{
+        padding: 15px 233px;
+        font-size: 18px;
+        margin: 8px;
+    }
+    .buy-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
 @media (min-width: 1024px) {
     .detail-container{
@@ -293,9 +313,4 @@ h1{
         border-left: 1px solid #0b263c;
         max-width: 1000px;
     }
-}
-.link-sin-estilo{
-    text-decoration: none;
-    color: inherit; /* Hereda el color del contenedor */
-    display: inline-block;
 }

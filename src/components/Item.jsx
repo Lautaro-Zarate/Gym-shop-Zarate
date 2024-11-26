@@ -14,7 +14,7 @@ const Item = ({prod}) =>{
                 <div className="cards-description">
                     <h2>{prod.name}</h2>
                     <p>${prod.price}</p>
-                    <button><img src="./public/icon.png" alt="icon" onClick={handlerBtnNavigate}/></button>
+                    <button><img src="../public/icon.png" alt="icon" onClick={handlerBtnNavigate}/></button>
                 </div>
             </div>
         </div>
