@@ -1,14 +1,24 @@
+import { useContext, useState, useEffect } from "react";
 import ItemCount from "./ItemCount";
-import { useState } from "react";
 import { Link } from "react-router-dom";
+import { CartContext } from "../context/CartContext";
+import Loader from "./loader";
 const ItemDetail = ({producto}) => {
     const [compra, setCompra] = useState(false)
+    const [loading, setLoading] = useState(true)
+    useEffect(() => {
+        setTimeout(()=>{
+            setLoading(false)
+        },1000)
+    }, [])
+    const {addToCart, cart} = useContext(CartContext);
+
     const onAdd = (cant) =>{
-        alert(`Agregaste ${cant} productos.`);
         setCompra(true);
+        addToCart(producto,cant)
     }
-    console.log(producto)
-    return(
+    console.log(cart)
+    return(loading ? <Loader/> :
         <div className="detail-container">
             <img src={producto.image} className="img-detail" />
             <div className="description-detail">
@@ -17,11 +27,10 @@ const ItemDetail = ({producto}) => {
                 <p>{producto.description}</p>
                 {compra > 0 ? 
                 <div className="buy-container">
-                    <Link to=""><button className="btn-cart">Ir al carrito</button></Link>
-                    <Link to=""><button className="btn-buy">Seguir comprando</button></Link>
+                    <Link to="/cart"><button className="btn-cart">Ir al carrito</button></Link>
+                    <Link to="/"><button className="btn-buy">Seguir comprando</button></Link>
                 </div>
                     : <ItemCount stock={producto.stock} onAdd={onAdd}/>}
-                {/* <button className="btn-buy">Comprar</button> */}
             </div>
         </div>
     )

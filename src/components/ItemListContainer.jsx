@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react"
 import ItemList from "./ItemList"
 import {getProducts} from "../mock/data"
 import { useParams } from "react-router-dom"
+import Loader from "./loader"
 const ItemListContainer = (props) => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -24,7 +25,7 @@ const ItemListContainer = (props) => {
     <div>
         <div>
         <h1>{greetings} <span className="category-text">{category}</span></h1>
-        {loading ? <img src="../public/loading.gif" className="loading"/> : <ItemList products={products}/>}
+        {loading ? <Loader/> : <ItemList products={products}/>}
         </div>
     </div>
     )
