@@ -39,7 +39,7 @@ export const CartProvider = ({children}) => { //CREAMOS EL PROVEEDOR
     }
 
     const cartTotal = () => {
-        return cart.reduce((acc, prod) => (prod.price * prod.cantidad), 0)
+        return cart.reduce((acc, prod) => (acc += prod.price * prod.cantidad), 0)
     }
     return(
         // ACLARAMOS A QUE CONTEXTO ESTAMOS PROVEEMOS 👇

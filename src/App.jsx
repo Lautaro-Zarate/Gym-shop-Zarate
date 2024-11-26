@@ -16,7 +16,6 @@ function App() {
           <Route path='/products/:category' element={<ItemListContainer greetings='Categoría: '/>}/>
           <Route path='/item/:id' element={<ItemDetailContainer/>}/>
           <Route path='/cart' element={<CartView/>}/>
-          {/* Pagina de Error👇 (Falta crear el componente)*/}
           <Route path='*' element={<Error/>}/>
         </Routes>
       </BrowserRouter>
