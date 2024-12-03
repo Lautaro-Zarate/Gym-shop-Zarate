@@ -17,7 +17,6 @@ const ItemDetail = ({producto}) => {
         setCompra(true);
         addToCart(producto,cant)
     }
-    console.log(cart)
     return(loading ? <Loader/> :
         <div className="detail-container">
             <img src={producto.image} className="img-detail" />

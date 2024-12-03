@@ -1,11 +1,11 @@
-// FALTA ESTILAR
-
 const CartItem = ({prod}) => {
     return(
-        <div>
-            <h2>{prod.name}</h2>
+        <div className="cart-full-container">
             <img src={prod.image} alt={prod.name} />
-            <p>{prod.price}</p>
+            <div className="cart-full-secondary">
+                <h4>{prod.name}</h4>
+                <p>${prod.price}</p>
+            </div>
         </div>
     )
 }

@@ -40,21 +40,36 @@ const CheckOut = () => {
     }
     return(
         <div>
+            <div className="bg-form">
+            <img src="../public/bg-form.jpg" alt="Background gym" />
+            </div>
             {orderId !== "" 
-            ?<div>
+            ?<div className="container-id">
                 <h2>Este es tu id de compra : {orderId}</h2>
-                <button>volver a home</button>
+                <Link className="btn-cart">Volver a home</Link>
             </div>
             :<div>
-                <h3>Complete sus datos</h3>
-                <form onSubmit={finalizarCompra}>
-                    <input type="text" name="name" placeholder="Ingrese su nombre" onChange={userData}/>
-                    <input type="text" name="lastName" placeholder="Ingrese su apellido" onChange={userData}/>
-                    <input type="text" name="address" placeholder="Ingrese su dirección" onChange={userData}/>
-                    <input type="email" name="email" placeholder="Ingrese su email" onChange={userData}/>
-                    <input type="email" name="second-email" placeholder="Repita su email" onChange={(e) => setValidate(e.target.value)}/>
-                    <button type="submit">Enviar</button>
-                </form>
+                <div className="form-container">
+                    <form onSubmit={finalizarCompra}>
+                        <h3>Complete sus datos</h3>
+                        <label> Nombre: 
+                            <input type="text" name="name" placeholder="Ingrese su nombre" onChange={userData}/>
+                        </label>
+                        <label> Apellido:
+                            <input type="text" name="lastName" placeholder="Ingrese su apellido" onChange={userData}/>
+                        </label>
+                        <label> Dirección:
+                            <input type="text" name="address" placeholder="Ingrese su dirección" onChange={userData}/>
+                        </label>
+                        <label> Email:
+                            <input type="email" name="email" placeholder="Ingrese su email" onChange={userData}/>
+                        </label>
+                        <label> Repita su email:
+                            <input type="email" name="second-email" placeholder="Repita su email" onChange={(e) => setValidate(e.target.value)}/>
+                        </label>
+                        <button type="submit" className="btn-cart">Enviar</button>
+                    </form>
+                </div>
             </div>}
         </div>
     )
