@@ -1,21 +1,13 @@
-const productos = [
-    {   id : 1,
-        name : "Mancuerna Redonda 10kg | Premium",
-        stock : 7,
-        price : 8200,
-        description: "Las Mancuernas Circulares Premium son la elección perfecta para quienes buscan un equipo de entrenamiento resistente, ergonómico y diseñado para durar, garantizando un rendimiento óptimo en cada sesión de ejercicios.",
-        image : "../public/prod1.png",
-        category: "mas populares"
-    },
-    {   id : 2,
-        name : "Mancuerna Redonda 20kg | Premium",
+export const productos = [
+    // ANTES DE AÑADIR DINAMICAMENTE BORRAR LOS ID'S Y LOS PRODUCTOS QUE SUBIERON A MANO
+    {   name : "Mancuerna Redonda 20kg | Premium",
         stock : 10,
         price : 8200,
         description: "Las Mancuernas Circulares Premium son la elección perfecta para quienes buscan un equipo de entrenamiento resistente, ergonómico y diseñado para durar, garantizando un rendimiento óptimo en cada sesión de ejercicios.",
         image : "../public/prod2.png",
         category: "mas populares"
     },
-    {   id : 3,
+    {   
         name : "Kettlebell 8kg | Premium",
         stock : 12,
         price : 14490,
@@ -23,7 +15,7 @@ const productos = [
         image : "../public/prod3.png",
         category: "nuevos"
     },
-    {   id : 4,
+    {   
         name : "Kettlebell 12kg | Premium",
         stock : 12,
         price : 14490,
@@ -31,7 +23,7 @@ const productos = [
         image : "../public/prod4.png",
         category: "ofertas"
     },
-    {   id : 5,
+    {   
         name : "Discos Olímpicos",
         stock : 15,
         price : 26990,
@@ -39,7 +31,7 @@ const productos = [
         image : "../public/prod5.png",
         category: "ofertas"
     },
-    {   id : 6,
+    {   
         name : "Bicicleta de Spinning",
         stock : 3,
         price : 790000,
@@ -47,7 +39,7 @@ const productos = [
         image : "../public/prod6.png",
         category: "mas populares"
     },
-    {   id : 7,
+    {   
         name : "Cajón Pliométrico",
         stock : 8,
         price : 45000,
@@ -55,7 +47,7 @@ const productos = [
         image : "../public/prod7.png",
         category: "ofertas"
     },
-    {   id : 8,
+    {   
         name : "Power Bands",
         stock : 10,
         price : 25000,
@@ -63,7 +55,7 @@ const productos = [
         image : "../public/prod8.png",
         category: "ofertas"
     },
-    {   id : 9,
+    {   
         name : "Anillas Olímpicas de Calistenia",
         stock : 6,
         price : 32000,
@@ -71,7 +63,7 @@ const productos = [
         image : "../public/prod9.png",
         category: "nuevos"
     },
-    {   id : 10,
+    {   
         name : "Rack Almacenamiento Mancuernas",
         stock : 2,
         price : 154000,
@@ -79,7 +71,7 @@ const productos = [
         image : "../public/prod10.png",
         category: "mas populares"
     },
-    {   id : 11,
+    {   
         name : "Barra Z Olímpica",
         stock : 7,
         price : 64000,
@@ -87,7 +79,7 @@ const productos = [
         image : "../public/prod11.png",
         category: "mas populares"
     },
-    {   id : 12,
+    {   
         name : "Barra Olímpica 20kg",
         stock : 6,
         price : 142000,
@@ -95,7 +87,7 @@ const productos = [
         image : "../public/prod12.png",
         category: "mas populares"
     },
-    {   id : 13,
+    {   
         name : "Trotadora Comercial",
         stock : 2,
         price : 250000,
@@ -103,7 +95,7 @@ const productos = [
         image : "../public/prod13.png",
         category: "nuevos"
     },
-    {   id : 14,
+    {   
         name : "Banco Multifuncional",
         stock : 3,
         price : 197000,
@@ -111,7 +103,7 @@ const productos = [
         image : "../public/prod14.png",
         category: "mas populares"
     },
-    {   id : 15,
+    {   
         name : "Set Rack + Pack 30 kg Mancuernas",
         stock : 3,
         price : 110000,

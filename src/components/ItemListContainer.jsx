@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from "react"
-import {getProducts} from "../mock/data"
 import { useParams } from "react-router-dom"
 import {collection, getDocs, query, where} from "firebase/firestore"
 import {db} from "../services/firebase"
@@ -32,6 +31,12 @@ const ItemListContainer = (props) => {
         .finally(() => setLoading(false))
     },[category])
 
+
+    // FUNCION PARA AÑADIR PRODUCTOS DINAMICAMENTE (SOLO SE APRETA UNA SOLA VEZ)
+    // const addData = () => {
+    //     const addProduct = collection(db, "productos")
+    //     productos.map((item) => addDoc(addProduct, item))
+    // }
 
     // MOCK LOCAL👇
     // useEffect(() => {
