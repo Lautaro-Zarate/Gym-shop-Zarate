@@ -4,6 +4,7 @@ import {collection, getDocs, query, where} from "firebase/firestore"
 import {db} from "../services/firebase"
 import ItemList from "./ItemList"
 import Loader from "./loader"
+import Info from "./Info"
 const ItemListContainer = (props) => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -57,7 +58,14 @@ const ItemListContainer = (props) => {
     <div>
         <div>
         <h1>{greetings} <span className="category-text">{category}</span></h1>
-        {loading ? <Loader/> : <ItemList products={products}/>}
+        {loading //SI LOADING EXISTE 
+        ? (<Loader/>) 
+        : (
+        <>
+        <ItemList products={products}/> 
+        <Info/>
+        </>
+        )}
         </div>
     </div>
     )
