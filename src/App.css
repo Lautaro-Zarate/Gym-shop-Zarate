@@ -265,6 +265,9 @@ button:hover{
     flex-direction: column;
     align-items: center;
 }
+.p-description{
+    color: #0b263c;
+}
 @media (min-width: 768px) {
     a{
         font-size: 16px;
@@ -424,9 +427,11 @@ button:hover{
 .cart-full-secondary{
     display: flex;
     flex-direction: column;
+    color: #0b263c;
 }
 .total-price{
     color: black;
+    font-weight: 500;
     margin: 8px;
     text-align: center;
 }
@@ -446,6 +451,11 @@ button:hover{
     .cart-full-container img{
         width: 350px;
         height: 350px;
+    }
+    .cart-full-secondary{
+        max-width: 200px;
+        text-align: center;
+        gap: 8px;
     }
     .cart-full-secondary h4,p{
         font-size: 18px;

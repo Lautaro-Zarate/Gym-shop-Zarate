@@ -10,7 +10,7 @@ const NavBar = () => {
             <NavLink to="/products/mas populares">Más Populares</NavLink>
             <NavLink to="/products/ofertas">Ofertas</NavLink>
             </div>
-            <NavLink to="/cart"><CartShop counter={10}/></NavLink>    
+            <NavLink to="/cart"><CartShop/></NavLink>    
         </nav>
     )
 }
