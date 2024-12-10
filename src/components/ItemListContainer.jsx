@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom"
 import {collection, getDocs, query, where} from "firebase/firestore"
 import {db} from "../services/firebase"
 import ItemList from "./ItemList"
-import Loader from "./loader"
+import Loader from "./Loader"
 import Info from "./Info"
 const ItemListContainer = (props) => {
     const [products, setProducts] = useState([]);
@@ -57,12 +57,12 @@ const ItemListContainer = (props) => {
     return(
     <div>
         <div>
-        <h1>{greetings} <span className="category-text">{category}</span></h1>
+        <h1 className="animate__animated animate__shakeY">{greetings} <span className="category-text">{category}</span></h1>
         {loading //SI LOADING EXISTE 
         ? (<Loader/>) 
         : (
         <>
-        <ItemList products={products}/> 
+        <ItemList products={products}/>
         <Info/>
         </>
         )}

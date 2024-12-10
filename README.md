@@ -1,7 +1,16 @@
 # Gym Shop🏋🏼‍♂️
 
-    Este proyecto es una simulación de tienda web utilizando REACT con JS como proyecto final en CoderHouse
+Este proyecto es una simulación de tienda web utilizando REACT con JAVASCRIPT estilado con CSS nativo como proyecto final en CoderHouse.
+
 ![Proyecto](link de foto)
+
+## ¿Que se logro en este proyecto?
+
+- Filtrado por tipo de oferta.
+- Agregado de productos al carrito.
+- Suma del precio final de todos los productos seleccionados.
+- Formulario al confirmar la compra, dándole al cliente un ID de compra.
+
 
 ## Instalación ⚙️
 
@@ -21,4 +30,4 @@ Para ver el proyecto ingresar a [Gym-Shop] (Link)
 - [React-Hot-Toast] (https://react-hot-toast.com/): Alertas y toasts de la app.
 
 ## Desarrollado por Lautaro Zarate 👦🏽
-- Mi [Linkedin](https://www.linkedin.com/in/lautaro-zaraterivas/)
+- Mi [Linkedin] (https://www.linkedin.com/in/lautaro-zaraterivas/)

@@ -2,7 +2,7 @@ import { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 import ItemCount from "./ItemCount";
-import Loader from "./loader";
+import Loader from "./Loader";
 import toast, { Toaster } from 'react-hot-toast';
 const ItemDetail = ({producto}) => {
     const [compra, setCompra] = useState(false)

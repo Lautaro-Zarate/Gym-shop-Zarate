@@ -4,9 +4,11 @@ import ItemListContainer from './components/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer'
 import Error from './components/Error'
 import CartView from './components/CartView'
+import CheckOut from './components/CheckOut'
+import Info from './components/Info'
+import Footer from './components/Footer'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { CartProvider } from './context/CartContext'
-import CheckOut from './components/CheckOut'
 function App() {
   return (
     <CartProvider>
@@ -19,7 +21,9 @@ function App() {
           <Route path='/cart' element={<CartView/>}/>
           <Route path='/checkout' element={<CheckOut/>}/>
           <Route path='*' element={<Error/>}/>
+          <Route path='/' element={<Info/>}/>
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </CartProvider>
   )

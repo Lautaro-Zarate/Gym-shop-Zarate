@@ -1,5 +1,4 @@
 import InfoCards from "./InfoCards";
-
 const Info = () => {
     return(
         <div>
