@@ -2,7 +2,7 @@
 
 Este proyecto es una simulación de tienda web utilizando REACT con JAVASCRIPT estilado con CSS nativo como proyecto final en CoderHouse.
 
-![Proyecto](link de foto)
+![Demo de App](./public/demo-proyecto.png)
 
 ## ¿Que se logro en este proyecto?
 
