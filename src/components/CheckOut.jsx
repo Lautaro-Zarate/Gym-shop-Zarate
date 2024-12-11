@@ -1,76 +1,75 @@
 import {db} from "../services/firebase"
 import { useState, useContext } from "react";
+import { useForm } from "react-hook-form";
 import {CartContext} from "../context/CartContext"
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { Link } from "react-router-dom";
 const CheckOut = () => {
-    const [user, setUser] = useState({});
-    const [validate, setValidate] = useState("");
-    const [orderId, setOrderId] = useState("")
-    const {cart, cartTotal, clear} = useContext(CartContext)
-    const userData = (e) => {
-        setUser({
-            ...user,
-            [e.target.name] : e.target.value
-        })
-    }
-    const finalizarCompra = (e) => {
-        e.preventDefault();
-        if(!user.name || !user.lastName || !user.address || !user.email){
-            alert("Te faltaron campos por completar")
-        }else if(user.email !== validate){
-            alert("Los emails no coinciden")
-        }else{
+    const {register, handleSubmit, formState:{errors}, getValues} = useForm();
+    const [orderId, setOrderId] = useState("");
+    const {cart, cartTotal, clear} = useContext(CartContext);
+    const onSubmit = (datosDeUsuario) => {
+        let order = {
             // OBJETO DE LA ORDEN DE COMPRA
-            let order = {
-                buyer : user,
-                carrito : cart,
-                total : cartTotal(),
-                date : serverTimestamp()
-            }
-            // TRAEMOS LA COLECCION
-            const venta = collection(db, "orden de compra")
-            // AGREGAMOS UN DOC A LA COLECCION
-            addDoc(venta, order)
-            .then((res) => {
-                setOrderId(res.id)
-                clear()
-            })
-            .catch((err) => console.log(err))
+            buyer: {
+                name : datosDeUsuario.nombre,
+                lastName: datosDeUsuario.apellido,
+                address: datosDeUsuario.direccion,
+                email: datosDeUsuario.email1,
+            },
+            carrito: cart,
+            total: cartTotal(),
+            date: serverTimestamp()
         }
-    }
+        // TRAEMOS LA COLECCION
+        const venta = collection(db, "orden de compra")
+        // AGREGAMOS UN DOC A LA COLECCION
+        addDoc(venta, order)
+        .then((res) => {
+            setOrderId(res.id)
+            clear()
+        })
+        .catch((err) => console.log(err))}
     return(
         <div>
             <div className="bg-form">
-            <img src="../public/bg-form.jpg" alt="Background gym" />
-            </div>
-            {orderId !== "" 
-            ?<div className="container-id">
-                <h2>Este es tu id de compra : {orderId}</h2>
-                <Link className="btn-cart">Volver a home</Link>
-            </div>
-            :<div>
-                <div className="form-container">
-                    <form onSubmit={finalizarCompra}>
+                <img src="../public/bg-form.jpg" alt="Background gym" />
+                {orderId !== ""
+                ?<div className="container-id">
+                    <h2>Este es tu id de compra : {orderId}</h2>
+                    <Link to="/" className="btn-cart">Volver a home</Link>
+                </div>
+                :<div className="form-container">
+                    <form onSubmit={handleSubmit(onSubmit)}>
                         <h3>Complete sus datos</h3>
-                        <label> Nombre: 
-                            <input type="text" name="name" placeholder="Ingrese su nombre" onChange={userData}/>
+                        <label>Nombre: 
+                            <input {...register("nombre", {required:true, minLength:3})} placeholder="Ingrese su nombre"/>
+                                {errors?.nombre?.type === "required" && <p className="p-validate">Este campo es obligatorio</p>}
+                                {errors?.nombre?.type === "minLength" && <p className="p-validate">Debe tener un mínimo de 3 caractéres</p>}
                         </label>
-                        <label> Apellido:
-                            <input type="text" name="lastName" placeholder="Ingrese su apellido" onChange={userData}/>
+                        <label>Apellido: 
+                            <input {...register("apellido", {required:true, minLength:3})} placeholder="Ingrese su apellido"/>
+                                {errors?.apellido?.type === "required" && <p className="p-validate">Este campo es obligatorio</p>}
+                                {errors?.apellido?.type === "minLength" && <p className="p-validate">Debe tener un mínimo de 3 caractéres</p>}
                         </label>
-                        <label> Dirección:
-                            <input type="text" name="address" placeholder="Ingrese su dirección" onChange={userData}/>
+                        <label>Dirección: 
+                            <input {...register("direccion", {required:true, minLength:10})} placeholder="Ingrese su dirección"/>
+                            {errors?.direccion?.type === "required" && <p className="p-validate">Este campo es obligatorio</p>}
+                            {errors?.direccion?.type === "minLength" && <p className="p-validate">Debe tener un mínimo de 10 caractéres</p>}
                         </label>
-                        <label> Email:
-                            <input type="email" name="email" placeholder="Ingrese su email" onChange={userData}/>
+                        <label>Email: 
+                            <input type="email" name="email1" {...register("email1", {required:true})} placeholder="Ingrese su email"/>
+                            {errors?.email1?.type === "required" && <p className="p-validate">Este campo es obligatorio</p>}
                         </label>
-                        <label> Repita su email:
-                            <input type="email" name="second-email" placeholder="Repita su email" onChange={(e) => setValidate(e.target.value)}/>
+                        <label>Repita su email: 
+                            <input type="email" name="email2" {...register("email2", {required:true ,validate:{equalEmails : mail2 => mail2 === getValues().email1}})} placeholder="Repita su email"/>
+                            {errors?.email2?.type === "required" && <p className="p-validate">Este campo es obligatorio</p>}
+                            {errors?.email2?.type === "equalEmails" && <p className="p-validate">Los emails deben ser iguales</p>}
                         </label>
                         <button type="submit" className="btn-cart">Enviar</button>
                     </form>
-                </div>
-            </div>}
+                </div>}
+            </div>
         </div>
     )
 }

@@ -1,8 +1,17 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useState } from "react";
+import toast, {Toaster} from "react-hot-toast";
 export const CartContext = createContext(); //CREAMOS EL CONTEXTO
 
 export const CartProvider = ({children}) => { //CREAMOS EL PROVEEDOR
     const [cart, setCart] = useState([]);
+    const notifyDelete = () => toast.success("Eliminaste un producto", {
+        position: "top-right",
+        style:{
+            backgroundColor: "#addbff",
+            color: "#0b263c",
+            border: "1px solid #0b263c" 
+        }
+    })
 
     // ACA IRIA LA LOGICA DEL CARRITO
     const addToCart = (item, quantity) => {
@@ -31,11 +40,13 @@ export const CartProvider = ({children}) => { //CREAMOS EL PROVEEDOR
     }
 
     const removeItem = (id) => {
-        cart.filter((prod) => prod.id !== id)
+        setCart(cart.filter((prod) => prod.id !== id))
+        notifyDelete();
     }
 
     const cartQuantity = () => {
         return cart.reduce((acc, prod) => (acc += prod.cantidad), 0)
+        
     }
 
     const cartTotal = () => {
@@ -46,6 +57,7 @@ export const CartProvider = ({children}) => { //CREAMOS EL PROVEEDOR
         <CartContext.Provider value={{cart, addToCart, clear, removeItem, cartQuantity, cartTotal}}>
             {/* ACA LOS COMPONENTES QUE USAN LA LOGICA DEL CARRITO */}
             {children}
+            <Toaster/>
         </CartContext.Provider>
     )
 }
