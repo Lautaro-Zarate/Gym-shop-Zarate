@@ -92,7 +92,7 @@ export const productos = [
         stock : 2,
         price : 250000,
         description: "La Trotadora GLAM LED transforma cualquier espacio en un centro de entrenamiento personal. Diseñada para ofrecer una experiencia de gimnasio en casa, combina tecnología avanzada con un diseño elegante y compacto.",
-        image : "../public/prod13.png",
+        image : "./public/prod13.png",
         category: "nuevos"
     },
     {   
