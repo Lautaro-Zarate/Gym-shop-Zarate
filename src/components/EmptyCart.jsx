@@ -3,7 +3,7 @@ const EmptyCart = () => {
     return( 
     <div>
         <div className="primary-container">
-            <img src="../public/empty-cart.png" alt="Empty Cart"/>
+            <img src="/empty-cart.png" alt="Empty Cart"/>
             <h1>Tu carrito está vacío</h1>
         </div>
         <div className="secondary-container">
