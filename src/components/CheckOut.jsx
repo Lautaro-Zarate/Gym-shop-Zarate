@@ -33,7 +33,7 @@ const CheckOut = () => {
     return(
         <div>
             <div className="bg-form">
-                <img src="../public/bg-form.jpg" alt="Background gym" />
+                <img src="/bg-form.jpg" alt="Background gym" />
                 {orderId !== ""
                 ?<div className="container-id">
                     <h2>Este es tu id de compra : {orderId}</h2>
