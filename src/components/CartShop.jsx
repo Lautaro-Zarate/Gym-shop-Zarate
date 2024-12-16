@@ -5,7 +5,9 @@ const CartShop = () => {
     return(
         <div className="cart-container">
             <img className="cart-shop" src="/cart-shop.png" alt="Cart-shop"/>
-            <p className="cart-number">{cartQuantity()}</p>
+            {cartQuantity() ? <p className="cart-number">{cartQuantity()}</p>
+            : <></>}
+
         </div>
     )
 }
